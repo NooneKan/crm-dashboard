@@ -35,8 +35,11 @@ public class UsuarioServiceEJB implements UsuarioService {
 		Usuario usuario = em.find(Usuario.class, id);
 		if (usuario != null) {
 			UsuarioDTO dto = new UsuarioDTO();
-			// TO-DO
 			dto.setId(usuario.getId());
+			dto.setEmail(usuario.getEmail());
+			dto.setEmpresaId(usuario.getEmpresa().getId());
+			dto.setNome(usuario.getNome());
+			dto.setSenha(usuario.getSenha());
 			return dto;
 		}
 
